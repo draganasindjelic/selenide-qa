@@ -1,5 +1,6 @@
 package org.automation;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginTest {
 
     @Test
+    @Tag(value = "opencart")
     public void loginTest() {
 
         WebDriver driver = new ChromeDriver();
@@ -17,6 +19,5 @@ public class LoginTest {
         driver.findElement(By.cssSelector("[value='Login']")).click();
         driver.close();
     }
-
 
 }
