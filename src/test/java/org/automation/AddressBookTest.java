@@ -1,6 +1,7 @@
 package org.automation;
 
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 public class AddressBookTest {
 
     @Test
+    @Tag(value = "opencart")
     public void addressBookTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
@@ -36,12 +38,6 @@ public class AddressBookTest {
         selectRegion.selectByVisibleText("Belgrade");
 
         driver.findElement(By.cssSelector("[type='submit']")).click();
-
-
-
-
-
-
-
     }
+
 }
