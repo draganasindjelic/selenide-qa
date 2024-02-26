@@ -28,6 +28,11 @@
             <artifactId>selenide-appium</artifactId>
             <version>${selenide.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.12</version>
+        </dependency>
     </dependencies>
 
     <build>
