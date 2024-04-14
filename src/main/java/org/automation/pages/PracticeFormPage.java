@@ -1,13 +1,10 @@
 package org.automation.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import static org.automation.driver.DriverManager.getDriver;
 
 public class PracticeFormPage extends BasePage {
-
-    public PracticeFormPage(WebDriver driver) {
-        super(driver);
-    }
 
     private static final By FIRSTNAME_INPUT = By.id("firstName");
     private static final By LASTNAME_INPUT = By.id("lastName");
@@ -33,33 +30,33 @@ public class PracticeFormPage extends BasePage {
     private static final By SUBMIT = By.id("submit");
 
     public void fillOutPracticeForm() {
-        driver.findElement(FIRSTNAME_INPUT).sendKeys("Dragana");
-        driver.findElement(LASTNAME_INPUT).sendKeys("Sindjelic");
-        driver.findElement(EMAIL_INPUT).sendKeys("dragana9290@gmail.com");
+        getDriver().findElement(FIRSTNAME_INPUT).sendKeys("Dragana");
+        getDriver().findElement(LASTNAME_INPUT).sendKeys("Sindjelic");
+        getDriver().findElement(EMAIL_INPUT).sendKeys("dragana9290@gmail.com");
         moveFocusToElement(RADIO_INPUT);
         waitForElementVisibility(RADIO_INPUT).click();
-        driver.findElement(USER_NUMBER_INPUT).sendKeys("0600706273");
+        getDriver().findElement(USER_NUMBER_INPUT).sendKeys("0600706273");
         moveFocusToElement(CALENDAR).click();
-        driver.findElement(MONTH_SELECT).click();
-        driver.findElement(VALUE_OF_MONTH_SELECT).click();
-        driver.findElement(YEAR_SELECT).click();
-        driver.findElement(VALUE_OF_YEAR_SELECT).click();
-        driver.findElement(DAY_SELECT).click();
-        driver.findElement(SUBJECT_LABEL).click();
+        getDriver().findElement(MONTH_SELECT).click();
+        getDriver().findElement(VALUE_OF_MONTH_SELECT).click();
+        getDriver().findElement(YEAR_SELECT).click();
+        getDriver().findElement(VALUE_OF_YEAR_SELECT).click();
+        getDriver().findElement(DAY_SELECT).click();
+        getDriver().findElement(SUBJECT_LABEL).click();
         moveFocusToElement(SUBJECT_LABEL_INPUT);
         waitToBeInteractable(SUBJECT_LABEL_INPUT).sendKeys("E");
         moveFocusToElement(SELECT_LABEL).click();
-        driver.findElement(SELECT_HOBBIES).click();
-        driver.findElement(UPLOAD_PICTURE).sendKeys("C:\\Users\\Dragana\\IdeaProjects\\selenide-qa\\src\\main\\resources\\margarite.jpg");
-        driver.findElement(CURRENT_ADRESS).sendKeys("Slanacki put 76l");
+        getDriver().findElement(SELECT_HOBBIES).click();
+        getDriver().findElement(UPLOAD_PICTURE).sendKeys("C:\\Users\\Dragana\\IdeaProjects\\selenide-qa\\src\\main\\resources\\margarite.jpg");
+        getDriver().findElement(CURRENT_ADRESS).sendKeys("Slanacki put 76l");
         moveFocusToElement(STATE).click();
-        driver.findElement(SELECT_STATE).click();
-        driver.findElement(CITY).click();
-        driver.findElement(SELECT_CITY).click();
+        getDriver().findElement(SELECT_STATE).click();
+        getDriver().findElement(CITY).click();
+        getDriver().findElement(SELECT_CITY).click();
     }
 
     public void submitPracticeForm() {
-        driver.findElement(SUBMIT).click();
+        getDriver().findElement(SUBMIT).click();
     }
 
 }
